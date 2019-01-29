@@ -1,8 +1,12 @@
 function sum(a) { 
-  let summa = a; 
+  let summa = a;  
   function getSumMore (b) {
-    summa+=b;
-    return getSumMore;
+    if(b){
+      summa+=b;
+      return getSumMore;
+    }else{
+      return summa;
+    }
   }
   getSumMore.valueOf = function(){
     return summa;
