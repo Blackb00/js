@@ -12,10 +12,10 @@ const makeRequest = function () {
     request.end("Hello server");
 }  
 
+var myArgs = process.argv.slice(2);
 
-const requestFunc = function (numberOfRequests) {
-
-    var myArgs = process.argv.slice(2);
+const requestFunc = function () {
+    let numberOfRequests = myArgs[1] ? myArgs[1] : 1;
     switch (myArgs[0]) {
         case "async":
             const doAsync = async function (func) {
@@ -38,4 +38,4 @@ const requestFunc = function (numberOfRequests) {
     }
     
 }
-requestFunc(100);
+requestFunc();
